@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
    <head>
-<script>
-
+       
+<script>   
+     
 //SORT    
     function sortTable(n) {
       var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
@@ -64,7 +65,7 @@
     h1 {
     font-family: Calibri, sans-serif;
     text-align: center;
-    color: #264d73;
+    color: #666B5E;
     }
     table {
     font-family: Calibri, sans-serif; 
@@ -74,20 +75,20 @@
     }
     table, th, td {
     border-bottom: 1px solid;
-    border-color: #dde5ee;
+    border-color: #b6c4b2;
     }
     th {
-    background-color: #a9bdd6;
-/*        #bacade;*/
+    background-color: #879E82; 
     font-size: 16px;
     color: floralwhite;
     text-align: left;
     }
     td {
-    color: #3a5678;
+    color: #414d3e;
     }
     tbody>tr>:nth-child(1){
     text-align: center;
+    min-width: 50px;
     }
     tbody>tr>:nth-child(2){
     width:200px;
@@ -95,11 +96,9 @@
     tbody>tr>:nth-child(3){
     width:200px;
     }
-/*
     tbody>tr>:nth-child(4){
     width: 150px;
     }
-*/
     tbody>tr>:nth-child(5){
     width: 150;
     text-align: center;
@@ -109,12 +108,19 @@
     text-align: center;
     }
     tr:nth-child(even) {
-    background-color: #eef2f7;
+    background-color: #ced7cb;
     }
     audio {
-    width: 200px;
+    width: 300px;
     height: 25px;
     }
+
+    audio::-webkit-media-controls-panel {
+    background-color: #e6ebe5;
+    color: #e6ebe5;
+    }
+    
+    
     #thSort {
     cursor: pointer;
     }
@@ -123,12 +129,10 @@
     }
 </style>
        <title>Tunes</title>
-   </head>
-   <body>
-
-      <h1>Barby's Tune List</h1>
-
-      <table id="myTable">
+   </head>    
+   <body>       
+      <h1 id="heading">Barby's Tune List</h1>
+      <table id="myTable">          
          <th id="thSort" onclick="sortTable(0)">Key</th>
          <th id="thSort" onclick="sortTable(1)">Tune</th>
          <th>Notes</th>
@@ -141,9 +145,17 @@
             <td>Acrobat's New Trick</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Acrobat's New Trick.mp3">
-               </audio>
+               </audio>                       
+<!--
+                    <script>
+                        let aud = document.getElementById("myAudio");
+                        aud.onpause = function() {
+                            aud.currentTime = 0;
+                        }
+                   </script>                
+-->
             </td>
             <td> </td>
             <td>Frank Blade</td>
@@ -154,7 +166,7 @@
             <td>Across The Sea</td>
             <td>No G - long pause</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Across the Sea.mp3">
                </audio>
             </td>
@@ -167,7 +179,7 @@
             <td>Altamont</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Altamont.mp3">
                </audio>
             </td>
@@ -180,7 +192,7 @@
             <td>Ball and Chain Hornpipe</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Ball & Chain Hornpipe.mp3">
                </audio>
             </td>
@@ -193,7 +205,7 @@
             <td>Belle Of Lexington</td>
             <td>Both) DDDA |DGAD</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Belle Of Lexington.mp3">
                </audio>
             </td>
@@ -206,7 +218,7 @@
             <td>Bennie Ate A Woodchuck</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Bennie Ate A Woodchuck.mp3">
                </audio>
             </td>
@@ -219,7 +231,7 @@
             <td>Big Dipper</td>
             <td>B) Goes to the G first time and D second time</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Big Dipper.mp3">
                </audio>
             </td>
@@ -237,7 +249,7 @@
                 <br>B) G D D Em | Em C D G
             </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Big Scioty.mp3">
                </audio>
             </td>
@@ -254,7 +266,7 @@
             <td>Big Tennessee</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Big Tennessee.mp3">
                </audio>
             </td>
@@ -267,7 +279,7 @@
             <td>Bill Cheatum</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Bill Cheatham.mp3">
                </audio>
             </td>
@@ -278,11 +290,11 @@
          <tr>
             <td>C</td>
             <td>Billy In The Low Ground (Lowe Stokes)</td>
-            <td>CCGC | CCGCC
+            <td>CCGC | CCGCC<br>
                CCFG | CCGCC
             </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Billy In The Low Ground.mp3">
                </audio>
             </td>
@@ -295,7 +307,7 @@
             <td>Billy in the Lowland</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Billy In The Lowland.mp3">
                </audio>
             </td>
@@ -308,8 +320,9 @@
             <td>Blue Eagle</td>
             <td>B) Has Bm (or not)</td>
             <td>
-               <audio controls>
-                  <source src="Music/Blue Eagle.mp3">
+               <audio class="myAudio" controls>
+                   <source src="Music/Altamont.mp3">
+<!--                  <source src="Music/Blue Eagle.mp3">-->
                </audio>
             </td>
             <td> </td>
@@ -321,7 +334,7 @@
             <td>Bone Yard</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Bone Yard.mp3">
                </audio>
             </td>
@@ -334,7 +347,7 @@
             <td>Booth</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Booth.mp3">
                </audio>
             </td>
@@ -347,7 +360,7 @@
             <td>Bound to Have a Little Fun</td>
             <td>B) G C G Am/C G D/G</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Bound%20to%20Have%20a%20Little%20Fun.mp3">
                </audio>
             </td>
@@ -360,7 +373,7 @@
             <td>Bull Of The Woods</td>
             <td>A) Go to C sooner as per Jones</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Bull of the Woods.mp3">
                </audio>
             </td>
@@ -375,11 +388,12 @@
          <tr>
             <td>C</td>
             <td>Bumblebee In A Jug</td>
-            <td>B) C F C G/C | C Am C G/C
+            <td>B) C F C G/C |<br>
+                C Am C G/C<br>
                Sometimes played in D
             </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Bumblebee In A Jug.mp3">
                </audio>
             </td>
@@ -392,7 +406,7 @@
             <td>Calico Corn</td>
             <td>A) Has a G</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Calico Corn.mp3">
                </audio>
             </td>
@@ -408,7 +422,7 @@
             <td>Camp Chase</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Camp Chase.mp3">
                </audio>
             </td>
@@ -421,7 +435,7 @@
             <td>Catlettsburg</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Catlettsburg.mp3">
                </audio>
             </td>
@@ -434,7 +448,7 @@
             <td>Chadwell's Station</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Chadwell's Station.mp3">
                </audio>
             </td>
@@ -447,7 +461,7 @@
             <td>Cherry River Rag</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Cherry River Rag.mp3">
                </audio>
             </td>
@@ -460,7 +474,7 @@
             <td>Chicken Under The Wash Tub</td>
             <td>B) D to C</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Chicken Under the Washtub.mp3">
                </audio>
             </td>
@@ -473,7 +487,7 @@
             <td>Cleveland's March To the White House</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Cleveland's March to the White House.mp3">
                </audio>
             </td>
@@ -486,7 +500,7 @@
             <td>Coker Creek</td>
             <td>B) G G Em G | C  G G D D G G</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Coker Creek.mp3">
                </audio>
             </td>
@@ -500,11 +514,14 @@
          <tr>
             <td>G</td>
             <td>Cold Winter Night</td>
-            <td>A and B) Em Em G G |<br> Em Em Em B7 (half measure) Em Em 
-               <br>C) Em Em Em B7 | <br>B7 B7 B7 Em Em 
+            <td>A and B)<br>
+                Em Em G G |<br> 
+                Em Em Em B7 (1/2 measure)<br> Em Em 
+               <br>C) Em Em Em B7 | 
+                <br>B7 B7 B7 Em Em 
             </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Cold Winter Night.mp3">
                </audio>
             </td>
@@ -520,7 +537,7 @@
             <td>Coleman's March</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Coleman's March.mp3">
                </audio>
             </td>
@@ -533,7 +550,7 @@
             <td>Colored Aristocracy</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Colored Aristocracy.mp3">
                </audio>
             </td>
@@ -546,7 +563,7 @@
             <td>Coming Down From Denver</td>
             <td>B) B7</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Coming Down From Denver.mp3">
                </audio>
             </td>
@@ -559,7 +576,7 @@
             <td>Cowhide Boots</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Cowhide Boots.mp3">
                </audio>
             </td>
@@ -574,7 +591,7 @@
                Also called Richmond
             </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Cuckoo's Nest.mp3">
                </audio>
             </td>
@@ -587,7 +604,7 @@
             <td>Cuffy</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Cuffey.mp3">
                </audio>
             </td>
@@ -600,7 +617,7 @@
             <td>Dailey's Reel</td>
             <td>Capo up three and play in G shape</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Dailey's Reel.mp3">
                </audio>
             </td>
@@ -613,7 +630,7 @@
             <td>Dixie Hoedown</td>
             <td>B1) G Bm Am</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Dixie Hoedown.mp3">
                </audio>
             </td>
@@ -626,7 +643,7 @@
             <td>Down The Mountain</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Down the Mountain.mp3">
                </audio>
             </td>
@@ -639,7 +656,7 @@
             <td>Ducks Eyeball</td>
             <td>B) Em and B7 | G D C D </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Duck's Eyeball.mp3">
                </audio>
             </td>
@@ -652,7 +669,7 @@
             <td>East Tennessee Blues</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/East Tennessee Blues.mp3">
                </audio>
             </td>
@@ -663,13 +680,15 @@
          <tr>
             <td>D</td>
             <td>Ebb and Flow</td>
-            <td>A) D D D D D G D D A A |
-               D D D D D G A A D D
-               B) D D D G G D D D A A | 
+            <td>A) <br>
+                D D D D D G D D A A |<br>
+               D D D D D G A A D D<br>
+               B)<br>
+                D D D G G D D D A A | <br>
                D D D G G D D A A D D
             </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Ebb and Flow.mp3">
                </audio>
             </td>
@@ -682,7 +701,7 @@
             <td>Ebenezer</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Ebenezer.mp3">
                </audio>
             </td>
@@ -695,7 +714,7 @@
             <td>Elk River Blues </td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Elk River Blues.mp3">
                </audio>
             </td>
@@ -708,7 +727,7 @@
             <td>Evening Shade</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Evening Shade.mp3">
                </audio>
             </td>
@@ -723,7 +742,7 @@
                B) C C C F F F F F G C (Carl Jones) 
             </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Farewell Trion.mp3">
                </audio>
             </td>
@@ -736,7 +755,7 @@
             <td>Fisher's Hornpipe</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Fisher's Hornpipe.mp3">
                </audio>
             </td>
@@ -749,7 +768,7 @@
             <td>Five Miles From Town</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Five Miles from Town.mp3">
                </audio>
             </td>
@@ -762,7 +781,7 @@
             <td>Flannery's Dream</td>
             <td>All A - one note samba</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Flannery's Dream.mp3">
                </audio>
             </td>
@@ -775,7 +794,7 @@
             <td>Flowers Of Edenborough Regular</td>
             <td>B) Ends G D G </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Flowers of Edinburgh.mp3">
                </audio>
             </td>
@@ -791,7 +810,7 @@
                B) G (long) Em Em A C G Bm G D G
             </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Flowers Of Edinburgh Art.mp3">
                </audio>
             </td>
@@ -807,7 +826,7 @@
                There's a Kitty Puss version with different B part
             </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Frankie.mp3">
                </audio>
             </td>
@@ -820,7 +839,7 @@
             <td>Gibson's</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Gibson's.mp3">
                </audio>
             </td>
@@ -833,7 +852,7 @@
             <td>Gillsaw</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Gilsaw.mp3">
                </audio>
             </td>
@@ -846,7 +865,7 @@
             <td>Golden Ticket</td>
             <td>Learn Eric's version</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Golden Ticket.mp3">
                </audio>
             </td>
@@ -859,7 +878,7 @@
             <td>Gone Indian</td>
             <td>Goes to the G when you least expect it every time</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Gone Indian.mp3">
                </audio>
             </td>
@@ -872,7 +891,7 @@
             <td>Goodbye Girls I’M Going To Boston</td>
             <td>B) End goes g e…?</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Goodbye Girls I'm Gone To Boston.mp3">
                </audio>
             </td>
@@ -885,7 +904,7 @@
             <td>Grassy Creek</td>
             <td>stays on the G for the feet first beat is a second measure </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Grassy Creek.mp3">
                </audio>
             </td>
@@ -900,7 +919,7 @@
                B) Has E G
             </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Green Sleeve.mp3">
                </audio>
             </td>
@@ -913,7 +932,7 @@
             <td>Green Willis</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Green Willis.mp3">
                </audio>
             </td>
@@ -926,7 +945,7 @@
             <td>Half Past Four</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Half Past Four.mp3">
                </audio>
             </td>
@@ -939,7 +958,7 @@
             <td>Hamsters In The Pantry </td>
             <td>A) D Em D</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Hamsters in the pantry.mp3">
                </audio>
             </td>
@@ -952,7 +971,7 @@
             <td>Hell Among the Yearlings</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Hell Among the Yearlings.mp3">
                </audio>
             </td>
@@ -965,7 +984,7 @@
             <td>Hell and Grace</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Hell and Grace.mp3">
                </audio>
             </td>
@@ -978,7 +997,7 @@
             <td>Henry King's Reel</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Henry King's Reel.mp3">
                </audio>
             </td>
@@ -993,7 +1012,7 @@
             <td>Here Comes Jack w/a Fiddle on His Back</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Here Comes Jack With a Fiddle on His Back.mp3">
                </audio>
             </td>
@@ -1006,7 +1025,7 @@
             <td>Herman's Hornpipe</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Herman's Hornpipe.mp3">
                </audio>
             </td>
@@ -1019,7 +1038,7 @@
             <td>Hickory</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Hickory.mp3">
                </audio>
             </td>
@@ -1032,7 +1051,7 @@
             <td>Hog Skin</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Hog Skin.mp3">
                </audio>
             </td>
@@ -1045,7 +1064,7 @@
             <td>I'm Gonna Have My Moustache Blacked</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/I'm Gonna Have My Mustache Blacked.mp3">
                </audio>
             </td>
@@ -1058,7 +1077,7 @@
             <td>Indian Ate The Woodchuck</td>
             <td>any f?</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Indian Ate The Woodchuck Salyer.mp3">
                </audio>
             </td>
@@ -1073,7 +1092,7 @@
                B) Quick A
             </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Indian Ate The Woodchuck.mp3">
                </audio>
             </td>
@@ -1086,7 +1105,7 @@
             <td>Jack Wilson</td>
             <td>I want to stay on the 4 chord a beat too long.</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Jack Wilson.mp3">
                </audio>
             </td>
@@ -1102,7 +1121,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Jaybird (The)</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Jaybird.mp3">
                </audio>
             </td>
@@ -1115,7 +1134,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>John Riley the Shepard</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/John Riley The Shepherd.mp3">
                </audio>
             </td>
@@ -1128,7 +1147,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Johnny Had a Wedding Phoebe Didn't Go</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Johnny Had a Wedding, Phoebe Wouldn't Go.mp3">
                </audio>
             </td>
@@ -1141,7 +1160,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Johnny June Reel</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Johnny June Reel.mp3">
                </audio>
             </td>
@@ -1154,7 +1173,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Jonesboro</td>
             <td>No 4 chord </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Jonesboro.mp3">
                </audio>
             </td>
@@ -1167,7 +1186,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>June Apple</td>
             <td>B) A and G with a D</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/June Apple.mp3">
                </audio>
             </td>
@@ -1180,7 +1199,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Kitchen Girl</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Kitchen Girl.mp3">
                </audio>
             </td>
@@ -1193,8 +1212,9 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Kohler's Reel</td>
             <td> </td>
             <td>
-               <audio controls>
-                  <source src="Music/no recording">
+               <audio class="myAudio" controls>
+                   <source src="Music/Altamont.mp3">
+<!--                  <source src="Music/no recording">-->
                </audio>
             </td>
             <td>
@@ -1210,7 +1230,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
                B) D and E7
             </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/L and N Rag.mp3">
                </audio>
             </td>
@@ -1223,7 +1243,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Lantern in the Ditch</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Lantern In The Ditch.mp3">
                </audio>
             </td>
@@ -1236,8 +1256,9 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Lee's Retreat From Gettysburg</td>
             <td>E not Em</td>
             <td>
-               <audio controls>
-                  <source src="Music/no recording">
+               <audio class="myAudio" controls>
+                   <source src="Music/Altamont.mp3">
+<!--                  <source src="Music/no recording">-->
                </audio>
             </td>
             <td>
@@ -1251,7 +1272,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Liberty </td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Liberty.mp3">
                </audio>
             </td>
@@ -1264,7 +1285,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Little Black Mustache</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Little Black Moustache.mp3">
                </audio>
             </td>
@@ -1277,7 +1298,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Little Pine Siskin</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Little Pine Siskin.mp3">
                </audio>
             </td>
@@ -1290,7 +1311,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Little Rose</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Little Rose.mp3">
                </audio>
             </td>
@@ -1303,8 +1324,9 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Little Sadie</td>
             <td> </td>
             <td>
-               <audio controls>
-                  <   source src="Music/no recording">
+               <audio class="myAudio" controls>
+                   <source src="Music/Altamont.mp3">
+<!--                  <source src="Music/no recording">-->
                </audio>
             </td>
             <td>
@@ -1318,7 +1340,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Liza Jane</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Liza Jane.mp3">
                </audio>
             </td>
@@ -1331,7 +1353,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Lookout Blues</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Lookout Blues.mp3">
                </audio>
             </td>
@@ -1344,7 +1366,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Lost Girl</td>
             <td>B) Play G C D</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Lost Girl.mp3">
                </audio>
             </td>
@@ -1357,7 +1379,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Lost Hornpipe</td>
             <td>B1) D G D A</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Lost Hornpipe.mp3">
                </audio>
             </td>
@@ -1370,7 +1392,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Louie's First Tune</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Louie's First Tune.mp3">
                </audio>
             </td>
@@ -1383,7 +1405,7 @@ onclick="window.open('Charts/Jack Wilson.png','popup','width=600,height=600'); r
             <td>Lovely Jane</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Lovely Jane.mp3">
                </audio>
             </td>
@@ -1400,7 +1422,7 @@ onclick="window.open('Charts/Lovely Jane.png,'popup','width=600,height=600'); re
             <td>Macguire and Patterson Waltz</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Maguire and Paterson.mp3">
                </audio>
             </td>
@@ -1413,7 +1435,7 @@ onclick="window.open('Charts/Lovely Jane.png,'popup','width=600,height=600'); re
             <td>Maggots in the Sheep Hide</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Maggots in the Sheep Hide.mp3">
                </audio>
             </td>
@@ -1426,7 +1448,7 @@ onclick="window.open('Charts/Lovely Jane.png,'popup','width=600,height=600'); re
             <td>Maysville</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Maysville.mp3">
                </audio>
             </td>
@@ -1437,9 +1459,14 @@ onclick="window.open('Charts/Lovely Jane.png,'popup','width=600,height=600'); re
          <tr>
             <td>G</td>
             <td>Meg Grey</td>
-            <td>For Ruth try the one with the mutent c part</td>
+            <td>Form is A B A B C C <br>
+                A) Em Em G A Em Em G A <br>
+                B) A A G G A A G A <br>
+                C) G G G Em
+             
+             </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Meg Gray.mp3">
                </audio>
             </td>
@@ -1452,7 +1479,7 @@ onclick="window.open('Charts/Lovely Jane.png,'popup','width=600,height=600'); re
             <td>Mike In The Wilderness</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Mike In The Wilderness.mp3">
                </audio>
             </td>
@@ -1465,7 +1492,7 @@ onclick="window.open('Charts/Lovely Jane.png,'popup','width=600,height=600'); re
             <td>Minnie Put Your Kettle On</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Minnie Put Your Kettle On.mp3">
                </audio>
             </td>
@@ -1478,7 +1505,7 @@ onclick="window.open('Charts/Lovely Jane.png,'popup','width=600,height=600'); re
             <td>Mississippi Palisades</td>
             <td>No A in either As of Bill Meyer at The Couth - But Kate likes it </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Mississippi Palisades.mp3">
                </audio>
             </td>
@@ -1493,7 +1520,7 @@ onclick="window.open('Charts/Lovely Jane.png,'popup','width=600,height=600'); re
             <td>Mississippi Snagboat</td>
             <td>part 2 -  does it stay on the D or go d a d etc</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Mississippi Snagboat.mp3">
                </audio>
             </td>
@@ -1509,7 +1536,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Monroe's Farewell To Long Hollow </td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Monroe's Farewell to Long Hollow.mp3">
                </audio>
             </td>
@@ -1522,7 +1549,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Moon Behind The Hill</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Moon Behind the Hill.mp3">
                </audio>
             </td>
@@ -1535,7 +1562,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Moonlight</td>
             <td>3 parts - All have same chords </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Moonlight.mp3">
                </audio>
             </td>
@@ -1548,7 +1575,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Moses Hoe the Corn</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Moses Hoe the Corn.mp3">
                </audio>
             </td>
@@ -1561,7 +1588,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Nail That Catfish To A Tree</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Nail That Catfish To A Tree.mp3">
                </audio>
             </td>
@@ -1574,7 +1601,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>New 5 Cent Piece (Buffalo Nickel)</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/New 5 cent piece.mp3">
                </audio>
             </td>
@@ -1587,7 +1614,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>New Camptown Races</td>
             <td>Capo up three and play in G shape</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/New Camptown Races.mp3">
                </audio>
             </td>
@@ -1600,7 +1627,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>North Carolina Breakdown</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/North Carolina Breakdown.mp3">
                </audio>
             </td>
@@ -1613,7 +1640,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Oklahoma News</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Oklahoma News.mp3">
                </audio>
             </td>
@@ -1626,7 +1653,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Old Beach Leave</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Old Beech Leaves.mp3">
                </audio>
             </td>
@@ -1639,7 +1666,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Old Parnell Reel</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Old Parnell Reel.mp3">
                </audio>
             </td>
@@ -1652,7 +1679,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Old Virginia Reel</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Old Virginia Reel.mp3">
                </audio>
             </td>
@@ -1665,7 +1692,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Ora Lee</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Ora Lee.mp3">
                </audio>
             </td>
@@ -1678,7 +1705,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Over the Waterfall</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Over the Waterfall.mp3">
                </audio>
             </td>
@@ -1691,7 +1718,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Page 16</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Page 16.mp3">
                </audio>
             </td>
@@ -1704,7 +1731,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Peter Francisco</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Peter Francisco.mp3">
                </audio>
             </td>
@@ -1717,7 +1744,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Pleasure House Rag</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Pleasure House Rag.mp3">
                </audio>
             </td>
@@ -1730,7 +1757,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Porter's Reel</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Porter's Reel.mp3">
                </audio>
             </td>
@@ -1743,7 +1770,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Possum's Tail Is Bare </td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Possum's Tail Is Bare.mp3">
                </audio>
             </td>
@@ -1756,7 +1783,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Preaching to the Chickens</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Preaching to the Chickens.mp3">
                </audio>
             </td>
@@ -1769,7 +1796,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Railroad Through The Rocky Mountains</td>
             <td>I had a hard time realizing that the B-part had a G</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Railroad Through The Rocky Mountains.mp3">
                </audio>
             </td>
@@ -1782,8 +1809,9 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Red Haired Boy</td>
             <td> </td>
             <td>
-               <audio controls>
-                  <source src="Music/no recording">
+               <audio class="myAudio" controls>
+                   <source src="Music/Altamont.mp3">
+<!--                  <source src="Music/no recording">-->
                </audio>
             </td>
             <td>
@@ -1797,7 +1825,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Richmond</td>
             <td>Stay on the D for two measures near the end of the a part</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Richmond.mp3">
                </audio>
             </td>
@@ -1810,7 +1838,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Road to Malvern</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Road to Malvern.mp3">
                </audio>
             </td>
@@ -1823,7 +1851,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Roaring River - No C</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Roaring River.mp3">
                </audio>
             </td>
@@ -1836,7 +1864,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Rocky Road to Jordan</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Rocky Road to Jordan.mp3">
                </audio>
             </td>
@@ -1849,7 +1877,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Root Hog Or Die</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Root Hog Or Die.mp3">
                </audio>
             </td>
@@ -1862,7 +1890,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Rose In The Mountain</td>
             <td>B) D 3.5 measures then G! </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Rose in the Mountain.mp3">
                </audio>
             </td>
@@ -1875,7 +1903,7 @@ onclick="window.open('Charts/Mississippi Snagboat.png,'popup','width=600,height=
             <td>Round The Horn</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Round The Horn.mp3">
                </audio>
             </td>
@@ -1891,7 +1919,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Run Down Boot</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Run Down Boot.mp3">
                </audio>
             </td>
@@ -1904,7 +1932,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Running Thru the Rain to Keep Your Hair Dry</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Running Through the Rain to Keep Your Hair Dry.mp3">
                </audio>
             </td>
@@ -1917,7 +1945,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Sadie at the Backdoor</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Sadie At The Back Door.mp3">
                </audio>
             </td>
@@ -1930,7 +1958,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Sail Away Ladies (JP Fraley)</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Sail Away Ladies.mp3">
                </audio>
             </td>
@@ -1943,7 +1971,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Sal's Got Mud Between Her Toes</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Sal's Got Mud between Her Toes.mp3">
                </audio>
             </td>
@@ -1956,7 +1984,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Salty Coffee</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Salty Coffee.mp3">
                </audio>
             </td>
@@ -1969,8 +1997,9 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Sam and Elzie</td>
             <td> </td>
             <td>
-               <audio controls>
-                  <source src="Music/Copyright protected">
+               <audio class="myAudio" controls>
+                   <source src="Music/Altamont.mp3">
+<!--                  <source src="Music/Copyright protected">-->
                </audio>
             </td>
             <td>
@@ -1984,7 +2013,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Sam Hill</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Sam Hill.mp3">
                </audio>
             </td>
@@ -1997,7 +2026,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Sand Hill</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Sand Hill.mp3">
                </audio>
             </td>
@@ -2010,7 +2039,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Sara Armstrong's Tune</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Sara Armstrong.mp3">
                </audio>
             </td>
@@ -2023,7 +2052,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Setauket</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Setauket.mp3">
                </audio>
             </td>
@@ -2036,7 +2065,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Sheep and Goats Go To Pasture</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Sheepsand Goats Go To Pasture.mp3">
                </audio>
             </td>
@@ -2049,7 +2078,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Shelburne Reel</td>
             <td>4 parts A: rocks B: normal C: g e am d D: goes to key of D</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Shelburne Reel.mp3">
                </audio>
             </td>
@@ -2062,7 +2091,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Shenandoah Falls</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Shenandoah Falls.mp3">
                </audio>
             </td>
@@ -2075,7 +2104,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Shortenin' Bread</td>
             <td>4 parts - 3rd goes G C E A D D G</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Shortenin' Bread.mp3">
                </audio>
             </td>
@@ -2088,7 +2117,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Simpson County</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Simpson County.mp3">
                </audio>
             </td>
@@ -2101,7 +2130,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Soapsuds Over the Fence</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Soapsuds Over the Fence.mp3">
                </audio>
             </td>
@@ -2114,7 +2143,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Somebody's Buried in the Graveyard</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Somebody's Buried In The Graveyard.mp3">
                </audio>
             </td>
@@ -2127,7 +2156,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Speed The Plow</td>
             <td>Extra beats in the middle of the second b part </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Speed the Plow.mp3">
                </audio>
             </td>
@@ -2142,7 +2171,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Spotted Pony</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Spotted Pony.mp3">
                </audio>
             </td>
@@ -2155,7 +2184,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Springfield</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Springfield.mp3">
                </audio>
             </td>
@@ -2168,7 +2197,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Stoney Fork</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Stoney Fork.mp3">
                </audio>
             </td>
@@ -2181,7 +2210,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Strumming on My Banjo</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Strumming On My Banjo.mp3">
                </audio>
             </td>
@@ -2196,7 +2225,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
                B)  A E A E A ???
             </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Sugar In The Gourd.mp3">
                </audio>
             </td>
@@ -2209,7 +2238,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Sweeping The Town</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Sweeping the Town.mp3">
                </audio>
             </td>
@@ -2222,7 +2251,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Taylor's Quick Step</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Taylor's Quickstep.mp3">
                </audio>
             </td>
@@ -2235,7 +2264,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Texas (aka NewCastle)</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Texas.mp3">
                </audio>
             </td>
@@ -2251,7 +2280,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>The Hawk Is A Mule</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/The Hawk Is a Mule.mp3">
                </audio>
             </td>
@@ -2264,8 +2293,9 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>The Long Tom</td>
             <td>B) Use E shape high up for B-flat</td>
             <td>
-               <audio controls>
-                  <source src="Music/no recording">
+               <audio class="myAudio" controls>
+                   <source src="Music/Altamont.mp3">
+<!--                  <source src="Music/no recording">-->
                </audio>
             </td>
             <td>
@@ -2279,7 +2309,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>The North Shore</td>
             <td>Capo on three and play out of Em (G) shape</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/The North Shore.mp3">
                </audio>
             </td>
@@ -2295,7 +2325,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
                B) Am 
             </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Scolding Wife.mp3">
                </audio>
             </td>
@@ -2308,7 +2338,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Tipping Back the Corn</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Tippin' Back the Corn.mp3">
                </audio>
             </td>
@@ -2321,7 +2351,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Turkey in the Straw (Minor)</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Turkey in the Straw.mp3">
                </audio>
             </td>
@@ -2334,7 +2364,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Twin Sisters</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Twin Sisters.mp3">
                </audio>
             </td>
@@ -2347,7 +2377,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Utah Trail March</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Utah Trail March.mp3">
                </audio>
             </td>
@@ -2360,7 +2390,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Walk Chalk Chicken With A Necktie On</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Walk Chalk Chicken With A Necktie On.mp3">
                </audio>
             </td>
@@ -2373,7 +2403,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Walk Old Shoe Heel Come a Draggin'</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Walk Old Shoe, Heel Come a Draggin'.mp3">
                </audio>
             </td>
@@ -2386,7 +2416,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Waynesboro</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Waynesboro.mp3">
                </audio>
             </td>
@@ -2399,7 +2429,7 @@ onclick="window.open('Charts/Round the Horn.png,'popup','width=600,height=600');
             <td>Weedwalker</td>
             <td>B) Has Bm D Bm D G D Etc</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Weedwalker.mp3">
                </audio>
             </td>
@@ -2415,7 +2445,7 @@ onclick="window.open('Charts/Weedwalker.png,'popup','width=600,height=600'); ret
             <td>Weeping Lady (The)</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Weeping Lady.mp3">
                </audio>
             </td>
@@ -2428,7 +2458,7 @@ onclick="window.open('Charts/Weedwalker.png,'popup','width=600,height=600'); ret
             <td>West Virginia Rag</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/West Virginia Rag.mp3">
                </audio>
             </td>
@@ -2441,7 +2471,7 @@ onclick="window.open('Charts/Weedwalker.png,'popup','width=600,height=600'); ret
             <td>Westfork Gals </td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/West Fork Gals.mp3">
                </audio>
             </td>
@@ -2454,7 +2484,7 @@ onclick="window.open('Charts/Weedwalker.png,'popup','width=600,height=600'); ret
             <td>Whiteface</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Whiteface.mp3">
                </audio>
             </td>
@@ -2467,7 +2497,7 @@ onclick="window.open('Charts/Weedwalker.png,'popup','width=600,height=600'); ret
             <td>Wild Horses at Stoney Point</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Wild Horses At Stoney Point.mp3">
                </audio>
             </td>
@@ -2480,7 +2510,7 @@ onclick="window.open('Charts/Weedwalker.png,'popup','width=600,height=600'); ret
             <td>Willow On The Lake</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Willow on the Lake.mp3">
                </audio>
             </td>
@@ -2496,7 +2526,7 @@ onclick="window.open('Charts/Willow on the Lake.png,'popup','width=600,height=60
             <td>Winder Slide</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Winder Slide.mp3">
                </audio>
             </td>
@@ -2509,7 +2539,7 @@ onclick="window.open('Charts/Willow on the Lake.png,'popup','width=600,height=60
             <td>Windy City Rag</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Windy City Rag.mp3">
                </audio>
             </td>
@@ -2522,8 +2552,9 @@ onclick="window.open('Charts/Willow on the Lake.png,'popup','width=600,height=60
             <td>Wooden Nickel</td>
             <td>b part first time through ends on A but I didn’t hear that. According to Judy might have been too many other guitars but might be a clue to my poor hearing (might just be a matter of choice though)</td>
             <td>
-               <audio controls>
-                  <source src="Music/Copyright protected">
+               <audio class="myAudio" controls>
+                   <source src="Music/Altamont.mp3">
+<!--                  <source src="Music/Copyright protected">-->
                </audio>
             </td>
             <td>
@@ -2537,7 +2568,7 @@ onclick="window.open('Charts/Willow on the Lake.png,'popup','width=600,height=60
             <td>Yellow Barber</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Yellow Barber.mp3">
                </audio>
             </td>
@@ -2550,7 +2581,7 @@ onclick="window.open('Charts/Willow on the Lake.png,'popup','width=600,height=60
             <td>Yellow Gals</td>
             <td> </td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/Yellow Gals.mp3">
                </audio>
             </td>
@@ -2563,8 +2594,9 @@ onclick="window.open('Charts/Willow on the Lake.png,'popup','width=600,height=60
             <td>Yellow Rose Of Texas</td>
             <td> </td>
             <td>
-               <audio controls>
-                  <source src="Music/no recording">
+               <audio class="myAudio" controls>
+                   <source src="Music/Altamont.mp3">
+<!--                  <source src="Music/no recording">-->
                </audio>
             </td>
             <td>
@@ -2579,7 +2611,7 @@ onclick="window.open('Charts/Willow on the Lake.png,'popup','width=600,height=60
             <td>Name</td>
             <td>Notes</td>
             <td>
-               <audio controls>
+               <audio class="myAudio" controls>
                   <source src="Music/">
                </audio>
             </td>
@@ -2588,6 +2620,14 @@ onclick="window.open('Charts/Willow on the Lake.png,'popup','width=600,height=60
             <td>Status</td>
          </tr>
 -->
-      </table>
+      </table> 
+        <script>
+            const myAudio = document.getElementsByClassName ("myAudio");
+            for (let i=0; i<myAudio.length; i++)
+            //"pause" is the type of event... it tells the listener to listen for "pause". (event) is the listener that receives the notification that one of the items called the pause event. myAudio[i] is the EventTarget... the thing that called the pause() method.
+            myAudio[i].addEventListener("pause", (event) => {
+                event.target.currentTime = 0;
+            })    
+       </script>         
    </body>
 </html>
